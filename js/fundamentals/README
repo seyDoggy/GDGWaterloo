@@ -1,27 +1,28 @@
-Javascript Fundamentals: Introduction to Javascript and jQuery
+# Javascript Fundamentals: Introduction to Javascript and jQuery
 Workshop Outline
 Date:	February 12, 2014	
 Time:	7pm - 9pm
 
-==Description==
+## Description
 Participants will be introduced to Javascript as the core programming language of the web, able to add such things as interactivity and animation to web pages, as well as retrieve and parse information to be displayed to a user.
+
 The journey will start with a review of how Javascript implements the core concepts of a programming language by walking participants through a series of examples.
 From there, participants will move toward developing an understanding of how, why and when to use a Javascript library, with jQuery as the example.
 
-Outcomes
+## Outcomes
 By the end of the Workshop, participants will be familiar with core programming concepts as they are implemented with Javascript, and the ability to access the DOM with jQuery.
 Prerequisites
 Participants should have a basic familiarity of HTML and CSS.
 
-Software Required
+## Software Required
 Code editor (Notepad++, Sublime, etc.)
 Web browser (Chrome, Firefox, Opera, IE9+, Lynx [just kidding])
 *AMP
 
-Hardware Required
+## Hardware Required
 A computer / laptop able to run a modern web browser (Chrome, Firefox, Opera, Safari, IE9+), and a code editor (ie. Sublime, Notepad++, Dreamweaver, etc).
 
-Topics
+## Topics
 Getting started with Javascript
 Options and best practices for writing your Javascript code
 External Javascript files and including them in a web project
@@ -34,11 +35,11 @@ Global vs. Private Variables
 Conditional Statements
 Iterators
 
-jQuery and Javascript Libraries
+## jQuery and Javascript Libraries
 What are they? and what do we need them for?
 Getting started with jQuery and basic DOM manipulation
 
-Events
+## Events
 Taking a look at events that take place within the browser
 ie.
 hover
@@ -46,11 +47,11 @@ click
 scroll
 Using events to trigger DOM manipulation
 
-WampServer download
+### WampServer download
 http://www.wampserver.com/en/
 
-MampServer download
+### MampServer download
 http://www.mamp.info/en/index.html
 
-Install LAMP on Ubuntu
+### Install LAMP on Ubuntu
 http://www.howtoforge.com/ubuntu_lamp_for_newbies
