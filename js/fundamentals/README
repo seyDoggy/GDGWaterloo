@@ -3,7 +3,7 @@ Workshop Outline
 Date:	February 12, 2014	
 Time:	7pm - 9pm
 
-Description
+==Description==
 Participants will be introduced to Javascript as the core programming language of the web, able to add such things as interactivity and animation to web pages, as well as retrieve and parse information to be displayed to a user.
 The journey will start with a review of how Javascript implements the core concepts of a programming language by walking participants through a series of examples.
 From there, participants will move toward developing an understanding of how, why and when to use a Javascript library, with jQuery as the example.
@@ -14,8 +14,9 @@ Prerequisites
 Participants should have a basic familiarity of HTML and CSS.
 
 Software Required
-Code editor
-Web browser
+Code editor (Notepad++, Sublime, etc.)
+Web browser (Chrome, Firefox, Opera, IE9+, Lynx [just kidding])
+*AMP
 
 Hardware Required
 A computer / laptop able to run a modern web browser (Chrome, Firefox, Opera, Safari, IE9+), and a code editor (ie. Sublime, Notepad++, Dreamweaver, etc).
