@@ -1,4 +1,4 @@
-# Javascript Fundamentals: Introduction to Javascript and jQuery
+# Javascript Fundamentals: Introduction to Javascript
 Workshop Outline
 Date:	February 12, 2014	
 Time:	7pm - 9pm
@@ -11,18 +11,21 @@ From there, participants will move toward developing an understanding of how, wh
 
 ## Outcomes
 By the end of the Workshop, participants will be familiar with core programming concepts as they are implemented with Javascript, and the ability to access the DOM with jQuery.
-Prerequisites
+
+## Prerequisites
 Participants should have a basic familiarity of HTML and CSS.
 
 ## Software Required
 Code editor (Notepad++, Sublime, etc.)
 Web browser (Chrome, Firefox, Opera, IE9+, Lynx [just kidding])
-*AMP
+*AMP (WAMPServer on Windows, XAMP/MAMP on Mac, LAMP on Linux)
 
-## Hardware Required
-A computer / laptop able to run a modern web browser (Chrome, Firefox, Opera, Safari, IE9+), and a code editor (ie. Sublime, Notepad++, Dreamweaver, etc).
+## Getting started
+Open index.html in your favourite text editor and in your browser. Follow the comments
+and correlate the code with the console output (press F12 in your web browser and navigate to
+the "console" tab to see output.
 
-## Topics
+## Topics Covered
 Getting started with Javascript
 Options and best practices for writing your Javascript code
 External Javascript files and including them in a web project
@@ -33,19 +36,6 @@ Arrays
 Functions and Arguments
 Global vs. Private Variables
 Conditional Statements
-Iterators
-
-## jQuery and Javascript Libraries
-What are they? and what do we need them for?
-Getting started with jQuery and basic DOM manipulation
-
-## Events
-Taking a look at events that take place within the browser
-ie.
-hover
-click
-scroll
-Using events to trigger DOM manipulation
 
 ### WampServer download
 http://www.wampserver.com/en/

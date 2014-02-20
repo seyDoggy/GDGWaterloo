@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<title>JS Fundamentals</title>
+		
+		<!-- This is an HTML comment. The browser won't parse this line. -->
+		
+		<!--
+			Include an external file to our web page.
+			You can include any JavaScript file in much the same way.
+			We're not going to use jQuery in this page, but this is still included here
+			to give you an idea of how to do it. Obviously in the real world, you
+			wouldn't want to include files you don't actually use :)
+		-->
+		<script src="/GDGWaterloo/js/libraries/jquery-1.11.0.js"></script>
+		
+		<!--
+			We can write JavaScript in our web page by placing it in <script> HTML tags.
+			Unless wrapped inside a window.onload() function or jQuery $(document).ready()
+			function or equivalent, it will execute immediately.
+		-->
+		<script>
+		
+			// This is a JavaScript comment
+			/*
+				This, too.
+			*/
+		
+			// JavaScript is loosely typed but you can define variables like so.
+			// NOTE variable declarations that you'll use in your code blocks should be
+			//      defined at the top.
+			var a, b, c,				// uninitialized variables
+			    index = 1,				// number
+				y = "Hello, world!", 	// string
+				
+				// array
+				arrayOfStuff = ["You", "are", "reading", "this", 100, 0],
+				
+				// objects
+				u = {
+						"name": "John",
+						"age": 30
+					},
+					
+				// functions
+				// This is how you concatenate strings.
+				myFunction = function(text) {
+					
+					var loves = " loves ",
+					    completeString = u.name + loves + text;
+					
+					// output to chrome console/FF console/IE10+ console
+					console.log(completeString);
+					
+					// annoy the user with a pop-up alert box
+					alert(completeString);
+				},
+				
+				// This is how optional parameters work.
+				showHowOptionalParametersWork = function(parameter1) {
+				
+					// check for optional parameter
+					if (typeof parameter1 === "undefined") {
+						console.log("Parameter1 missing!");
+					} else {
+						console.log("Parameter1 is here.");
+					}
+				};
+				
+			myFunction("JavaScript");
+			
+			showHowOptionalParametersWork();
+			showHowOptionalParametersWork("Hi, Mom!");
+			
+			for (index = 0; index < arrayOfStuff.length; index++) {
+				console.log(arrayOfStuff[index]); // will output "You\nare\nreading\nthis\n100\n0"
+			}
+			
+			// Note that variables created outside of the scope of a block are available
+			// to use inside interior blocks, but not vise-versa.
+			console.log(loves); // found in "myFunction()", will print "undefined"
+			
+		</script>
+	</head>
+	<body>
+		<p>This space intentionally left blank.</p>
+	</body>
+</html>
