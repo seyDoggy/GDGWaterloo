@@ -1,4 +1,5 @@
-# Javascript Fundamentals: Introduction to Javascript
+# Javascript Fundamentals
+# Introduction to Javascript
 Workshop Outline
 Date:	February 12, 2014	
 Time:	7pm - 9pm
