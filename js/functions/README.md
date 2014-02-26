@@ -67,4 +67,4 @@ Constructors are a very powerful way to make an object with both private and pub
 
 Prototypes are very efficient ways to extend objects, both before and after instantiation.
 
-- see examples 15 through 14
+- see examples 14 through 15
