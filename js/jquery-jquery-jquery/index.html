@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery jQuery jQuery!</title>
+		
+		<!-- Just some basic stuff so it doesn't look so 1991 -->
+		<style>
+			body {
+				font-size:2em;
+			}
+			a {
+				color:#cc0000;
+				font-weight:bold;
+				text-decoration:underline;
+			}
+			.pink {
+				color:#f0f;
+			}
+			input[type="button"] {
+				font-size:0.9em;
+				width:600px;
+				height:50px;
+			}
+		</style>
+		
+		<script src="/GDGWaterloo/js/libraries/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="/GDGWaterloo/js/libraries/rainbow/rainbow.js"></script>
+		<script>
+		
+			// Wait until page loads before starting execution.
+			// If you don't do this, JavaScript/jQuery will try to run before the <body> element
+			// loads, thus finding no elements in our selectors, etc.
+			$(document).ready(function () {
+			
+				/*
+					SELECTORS, YAY!
+					Using jQuery's selectors, you can grab any element (or array of elements) in the DOM
+					any time you want. They work just like CSS selectors. Check it out, home boy!
+				*/
+				var spans = $("span"),		// select all spans
+					divs = $("div"),		// select all divs
+					yous = $(".you"),		// select all elements with class you
+					williamsburg = $("#williamsburg");	// grab the element with the id Williamsburg
+				
+				// Make my text rainbowy by using the rainbow plugin which adds the .rainbow function
+				// to selected elements
+				// https://github.com/xoxco/rainbow-text
+				$(".rainbowText").rainbow({ 
+					colors: [
+						'#FF0000',
+						'#f26522',
+						'#fff200',
+						'#00a651',
+						'#28abe2',
+						'#2e3192',
+						'#6868ff'
+					],
+					animate: true,
+					animateInterval: 100,
+					pad: false,
+					pauseLength: 100,
+				});
+				
+				// Do super-cool stuff based on keypresses (keypressi?)
+				// http://api.jquery.com/keypress/
+				$(document).keypress(function (event) {
+
+					// which key was pressed?
+					switch (event.which) {
+					
+						case 49: // "1" on the keyboard
+						
+							// Note that you can chain jQuery functions on a selector. Neat!
+							$(".you").css("font-weight", "bold").css("font-size", "3em").addClass("pink");
+							break;
+						
+						case 50: // "2" on the keyboard, and so on
+						
+							// Make Williamsburg a link to the wiki article on that topic
+							$("#williamsburg").replaceWith(function() {
+								var text = $.trim($(this).text());  // "Williamsburg"
+								return "<a href='https://en.wikipedia.org/wiki/Williamsburg%2C_Brooklyn' target='_blank'>" + text + "</a>";
+							});
+							break;
+					}
+				});
+				
+				// Listen for a click on this type of selector
+				// http://api.jquery.com/click/
+				$("input[type='button']").click(function () {
+				
+					// "this" is a DOM element in this case, so we pass it as a selector
+					// for jQuery to find, then set the attribute on it
+					//$(this).attr("disabled", true);
+					
+					// Request some JSON from the server
+					$.ajax({
+						dataType: "json",
+						url: "response.json",
+						data: null,
+						success: function (data) {
+							if (data.success === true) {
+								alert("Success! You have now paid John $100,000!");
+							} else {
+								alert("Boo-urns! You don't have enough in your account to cover.");
+							}
+						}
+					});
+				});			
+			});			
+		</script>
+	</head>
+	<body>
+		<h1>How this works</h1>
+		<ul>
+			<li>Press 1 or 2 for <span class="rainbowText">super cool effects.</span></li>
+		</ul>
+		<h2>Some example text to play with:</h2>
+		<p>
+			Organic sustainable lomo, +1 irony McSweeney's skateboard Portland PBR
+			tattooed farm-to-table Terry Richardson Williamsburg. Organic farm-to-table
+			wolf, next level shit put a bird on it freegan American Apparel
+			<span id="williamsburg">Williamsburg</span> chambray gentrify viral <span class="you">you</span> probably haven't heard
+			of them keffiyeh Cosby sweater. Pitchfork photo booth fuck, DIY
+			cardigan messenger bag butcher Thundercats tofu <span class="you">you</span> probably
+			haven't heard of them whatever squid VHS put a bird on it. Thundercats
+			fixie Williamsburg, photo booth synth vinyl dreamcatcher Wes Anderson
+			cliche. <span class="you">You</span> probably haven't heard of them DIY mlkshk biodiesel McSweeney's
+			raw denim. Skateboard Pitchfork Etsy, photo booth messenger bag artisan
+			raw denim beard Tumblr retro Austin. Wes Anderson sustainable keffiyeh,
+			blog lomo craft beer cliche brunch homo skateboard biodiesel fanny pack
+			Pitchfork <span class="you">you</span> probably haven't heard of them Stumptown.
+		</p>
+		<input type="button" value="Pay John $100,000 (cannot be undone)" />
+	</body>
+</html>
