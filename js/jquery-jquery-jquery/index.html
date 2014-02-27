@@ -14,6 +14,8 @@
 				text-decoration:underline;
 			}
 			.pink {
+				font-size:3em;
+				font-weight:bold;
 				color:#f0f;
 			}
 			input[type="button"] {
@@ -61,6 +63,12 @@
 					pauseLength: 100,
 				});
 				
+				// On hover, write to console
+				// http://api.jquery.com/hover/
+				$(".rainbowText").hover(function () {
+					console.log("Hi Mom!");
+				});
+				
 				// Do super-cool stuff based on keypresses (keypressi?)
 				// http://api.jquery.com/keypress/
 				$(document).keypress(function (event) {
@@ -71,16 +79,30 @@
 						case 49: // "1" on the keyboard
 						
 							// Note that you can chain jQuery functions on a selector. Neat!
-							$(".you").css("font-weight", "bold").css("font-size", "3em").addClass("pink");
+							$(".you").addClass("pink");
 							break;
 						
 						case 50: // "2" on the keyboard, and so on
 						
 							// Make Williamsburg a link to the wiki article on that topic
-							$("#williamsburg").replaceWith(function() {
+							$(".williamsburg").replaceWith(function() {
 								var text = $.trim($(this).text());  // "Williamsburg"
 								return "<a href='https://en.wikipedia.org/wiki/Williamsburg%2C_Brooklyn' target='_blank'>" + text + "</a>";
 							});
+							break;
+							
+						case 51:
+						
+							$(yous).removeClass("pink");
+							break;
+							
+						case 52:
+						
+							$(".you").append("<p>Hello.</p>");
+							break;
+							
+						case 57:
+							alert("Hi Mom!");
 							break;
 					}
 				});
@@ -91,16 +113,18 @@
 				
 					// "this" is a DOM element in this case, so we pass it as a selector
 					// for jQuery to find, then set the attribute on it
-					//$(this).attr("disabled", true);
-					
+					$(this).attr("disabled", true);				
+				
 					// Request some JSON from the server
 					$.ajax({
 						dataType: "json",
 						url: "response.json",
 						data: null,
 						success: function (data) {
+
 							if (data.success === true) {
 								alert("Success! You have now paid John $100,000!");
+								alert(data.name);
 							} else {
 								alert("Boo-urns! You don't have enough in your account to cover.");
 							}
@@ -120,11 +144,11 @@
 			Organic sustainable lomo, +1 irony McSweeney's skateboard Portland PBR
 			tattooed farm-to-table Terry Richardson Williamsburg. Organic farm-to-table
 			wolf, next level shit put a bird on it freegan American Apparel
-			<span id="williamsburg">Williamsburg</span> chambray gentrify viral <span class="you">you</span> probably haven't heard
+			<span class="williamsburg">Williamsburg</span> chambray gentrify viral <span class="you">you</span> probably haven't heard
 			of them keffiyeh Cosby sweater. Pitchfork, DIY
 			cardigan messenger bag butcher Thundercats tofu <span class="you">you</span> probably
 			haven't heard of them whatever squid VHS put a bird on it. Thundercats
-			fixie Williamsburg, photo booth synth vinyl dreamcatcher Wes Anderson
+			fixie <span class="williamsburg">Williamsburg</span>, photo booth synth vinyl dreamcatcher Wes Anderson
 			cliche. <span class="you">You</span> probably haven't heard of them DIY mlkshk biodiesel McSweeney's
 			raw denim. Skateboard Pitchfork Etsy, photo booth messenger bag artisan
 			raw denim beard Tumblr retro Austin. Wes Anderson sustainable keffiyeh,
