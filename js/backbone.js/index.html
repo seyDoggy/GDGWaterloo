@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="/GDGWaterloo/js/libraries/require.js"></script>
+		
+		<script>
+			require.config({
+			
+				shim: {
+					'backbone': {
+						//These script dependencies should be loaded before loading
+						//backbone.js
+						deps: ['underscore', 'jquery'],
+						//Once loaded, use the global 'Backbone' as the
+						//module value.
+						exports: 'Backbone'
+					},
+					
+					'underscore': {
+						exports: '_'
+					}
+				},
+				
+				paths: {
+					jquery: "/GDGWaterloo/js/libraries/jquery-1.11.0",
+					underscore: "/GDGWaterloo/js/libraries/underscore-min",
+					backbone: "/GDGWaterloo/js/libraries/backbone-min",
+					models: "/GDGWaterloo/js/backbone.js/models",
+					views: "/GDGWaterloo/js/backbone.js/views",
+					data: "/GDGWaterloo/js/backbone.js/data"
+				}
+			});
+
+			require([
+			  // Load our app module and pass it to our definition function
+			  'app',
+			], function(App){
+			  // The "app" dependency is passed in as "App"
+			  App.initialize();
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
